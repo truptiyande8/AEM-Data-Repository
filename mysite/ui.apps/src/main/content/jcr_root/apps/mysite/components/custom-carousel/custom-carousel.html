@@ -1,0 +1,38 @@
+<sly data-sly-use.model="com.mysite.core.models.CustomCarouselModel"/>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+
+<sly data-sly-call="${clientlib.css @ categories='mysite.customcarousel'}"/>
+
+<sly data-sly-call="${clientlib.js @ categories='mysite.customcarousel'}"/>
+
+<div class="custom-carousel"
+     data-autoplay="${model.autoplay}"
+     data-interval="${model.interval}">
+
+    <h2 class="custom-carousel__heading">
+        ${model.heading}
+    </h2>
+
+    <div class="custom-carousel__wrapper">
+
+        <div class="custom-carousel__slides"
+             data-sly-list.item="${model.carouselItems}">
+
+            <div class="custom-carousel__slide">
+
+                <img src="${item.image}"
+                     alt="${item.title}" />
+
+                <div class="custom-carousel__content">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+
+                    <a href="${item.buttonLink}"
+                       class="custom-carousel__button">
+                        ${item.buttonText}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
