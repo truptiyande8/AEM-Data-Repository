@@ -1,0 +1,32 @@
+<sly data-sly-use.model=
+             "com.mysite.core.models.WeatherModel">
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"/>
+    <sly data-sly-call="${clientlib.css @ categories='mysite.weather'}"/>
+    <div class="weather-card">
+
+        <h2>${model.weather.location}</h2>
+
+        <img src="${model.weather.iconUrl}"
+             alt="weather"/>
+
+        <p>
+            Temperature:
+            ${model.weather.temperature}
+        </p>
+
+        <p>
+            Humidity:
+            ${model.weather.humidity} %
+        </p>
+
+        <p> Description:
+            ${model.weather.description}
+        </p>
+
+        <p> Country:
+            ${model.weather.description}
+        </p>
+
+    </div>
+
+</sly>
