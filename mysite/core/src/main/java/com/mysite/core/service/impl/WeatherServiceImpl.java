@@ -114,11 +114,12 @@ public class WeatherServiceImpl implements WeatherService {
 
         } catch (IOException e) {
 
-            e.printStackTrace();
+            LOG.error("Data is not found", e);
 
         } catch (InterruptedException e) {
 
-            Thread.currentThread().interrupt();
+            LOG.error("InterruptedException", e);
+
         }
 
         return weather;
